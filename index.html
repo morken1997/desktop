@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 浏览器起始页2.0 morken1997 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>about:blank</title>
+  <link href="./images/M1.ico" rel="shortcut icon" type="image/x-icon" />
+
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/1.css" />
+  <script src="./js/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/1.js"></script>
+  <script src="./js/axios.js"></script>
+  <!-- <script src="./js/weather.js"></script> -->
+  <script src="./js/vue.js"></script>
+  <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+</head>
+
+<body>
+  <div class="container">
+    <header class="text-center">
+      <!-- <h1>一个长一点的标题</h1> -->
+    </header>
+
+    <header class="text-center toki">
+      <img id="toki" src="./images/0.png" alt="" />
+      <img id="toki" src="./images/0.png" alt="" />
+      <img id="colon" src="./images/10.png" alt="" />
+      <img id="toki" src="./images/0.png" alt="" />
+      <img id="toki" src="./images/0.png" alt="" />
+      <img id="colon" src="./images/10.png" alt="" />
+      <img id="toki" src="./images/0.png" alt="" />
+      <img id="toki" src="./images/0.png" alt="" />
+    </header>
+
+    <!-- 天气 -->
+    <div id="weather-app" class="">
+      <img class="weather" :src="icon" :alt="description">
+      &nbsp;
+      <span id="area" class=""><img class="weather-unit" src="./images/icons/location.png" alt="">{{city}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/compass.png" alt="">&nbsp;{{location}}</span>
+      <br>
+      &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons//dt.png" alt=""> {{dt}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/sunrise.png" alt=""> {{sunrise}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/sunset.png" alt=""> {{sunset}}</span>
+      <br>
+      &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/temp.png" alt=""> {{currentTemp}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/pressure.png" alt=""> {{pressure}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/humidity.png" alt=""> {{humidity}}</span> &nbsp;
+      <span class=""><img class="weather-unit" src="./images/icons/windspeed.png" alt="wind icon error"> {{wind}}</span>
+
+    </div>
+
+
+    <form action="https://www.baidu.com/s" target="_blank">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend" id="button-addon1">
+          <button class="btn btn-outline-secondary" type="submit">
+            <span style="color: black"><b>百度一下</b></span>
+          </button>
+        </div>
+        <input id="search" name="word" size="30" type="text" autocomplete="off" class="form-control text-center touming"
+          placeholder="百度/Google一下，看它知不知道" aria-describedby="button-addon3" />
+        <div class="input-group-append" id="button-addon2">
+          <button class="btn btn-outline-secondary" type="button" onclick="switchGoogle()">
+            <span style="color: black"><b>Google一下</b></span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr>
+    <h4 id="motto"></h4>
+    <hr>
+    <!-- In theory, there is no difference between theory and practice. But in
+        practice, there is. -->
+
+
+    <!-- 导航 -->
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-success touming">
+        <b>常用工具</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://zlwx100.ys168.com/" style="color:black;" target="_blank"
+          style="text-decoration:none">暂存空间</a>&nbsp;&nbsp;&nbsp;
+        <a href="http://www.runoob.com/" style="color:black;" target="_blank">RUNOOB</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://fanjian.me" style="color:black;" target="_blank">Fanjian.me</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://blog.sym.su" style="color:black;" target="_blank">sym.su</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com" style="color:black;" target="_blank">Github</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.majsoul.com/#/" style="color:black;" target="_blank">雀魂</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://ssrr.pro" style="color:black;" target="_blank">SSR</a>
+      </li>
+      <li class="list-group-item list-group-item-danger touming">
+        <b>社交网站</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://weibo.com/u/3200576287/home" style="color:black;" target="_blank">新浪微博</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.zhihu.com/" style="color:black;" target="_blank">知乎</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.douyu.com/g_DOTA2/" style="color:black;" target="_blank">斗鱼</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.bilibili.com/" style="color:black;" target="_blank">Bilibili</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.youku.com/" style="color:black;" target="_blank">优酷</a>
+      </li>
+      <li class="list-group-item list-group-item-warning touming">
+        <b>学习资料</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://ctext.org/zh" style="color:black;" target="_blank">中國哲學書電子化計劃</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://www.gushiwen.org/" style="color:black;" target="_blank">古诗文网</a>&nbsp;&nbsp;&nbsp;
+        <a href="https://sou-yun.cn/index.aspx" style="color:black;" target="_blank">搜韵</a>
+      </li>
+      <li class="list-group-item list-group-item-info touming">
+        <b>电影视频</b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="http://www.rrys2019.com/" style="color:black;" target="_blank">字幕组</a>
+      </li>
+    </ul>
+    <hr>
+
+    <!-- 新闻 -->
+    <div id="news">
+      news预留
+    </div>
+
+    <footer class="fixed-bottom">
+      <nav class="container">
+        <div class="text-center">
+          <h6>hola&copy;2020 Morken</h6>
+        </div>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    const API = 'https://api.openweathermap.org/data/2.5/weather?units=metric'
+    const KEY = '&APPID=0ab1cd22e4c10d85a9c380f889155e6b'
+
+    let weatherApp = new Vue({
+      el: '#weather-app',
+      data: {
+        city: '',
+        dt: '',
+        currentTemp: '',
+        // minTemp: '',
+        // maxTemp: '',
+        sunrise: '',
+        sunset: '',
+        pressure: '',
+        humidity: '',
+        wind: '',
+        description: '',
+        icon: '',
+        location: ''
+      },
+      methods: {
+        getWeather(url) {
+          axios
+            .get(url)
+            .then(response => {
+              console.log(url);
+              this.city = response.data.name + ',' + response.data.sys.country;
+              this.dt = new Date(response.data.dt * 1000).toLocaleTimeString("en-GB").slice(0, 5);
+              this.currentTemp = parseInt(response.data.main.temp) + '℃';
+              // this.minTemp = response.data.main.temp_min;
+              // this.maxTemp = response.data.main.temp_max;
+              this.pressure = response.data.main.pressure + 'hpa';
+              this.humidity = response.data.main.humidity + '%';
+              this.wind = response.data.wind.speed + 'm/s';
+              this.description = response.data.weather[0].description;
+              this.icon = "./images/weather/" + response.data.weather[0].icon + ".png";
+              console.log(response.data.weather[0].icon.slice(0, 2));
+              console.log(response.data.weather[0].icon);
+              this.sunrise = new Date(response.data.sys.sunrise * 1000).toLocaleTimeString("en-GB").slice(0, 5);
+              this.sunset = new Date(response.data.sys.sunset * 1000).toLocaleTimeString("en-GB").slice(0, 5);
+              this.location = JSON.stringify(response.data.coord.lon).replace('.', '°') + '，' + JSON.stringify(response.data.coord.lat).replace('.', '°');
+            })
+            .catch(error => {
+              console.log(error);
+              console.log(url);
+            });
+        },
+        geolocation() {
+          navigator.geolocation.getCurrentPosition(this.buildUrl, this.geoError);
+        },
+        buildUrl(position) {
+          const lat = position.coords.latitude;
+          const lon = position.coords.longitude;
+
+          this.getWeather(API + '&lat=' + lat + '&lon=' + lon + KEY);
+        },
+        geoError(error) {
+          this.getWeather(API + '&lat=0&lon=0' + KEY);
+        }
+      },
+      beforeMount() {
+        this.geolocation();
+      },
+    });
+  </script>
+</body>
+
+</html>

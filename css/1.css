@@ -1,0 +1,65 @@
+body {
+    /* background-image: url('../images/bg2.jpg'); */
+    background-color: skyblue;
+    background-repeat: no-repeat;
+}
+
+.touming {
+    position: static;
+    opacity: 0.65;
+}
+
+.touming b,
+.touming a {
+    color: black;
+    position: relative;
+}
+
+@font-face {
+    font-family: infinity;
+    src: url(../src/Infinity.ttf);
+}
+
+#motto {
+    text-align: center;
+}
+
+#weather-app {
+    /* border: 1px solid orange; */
+    float: right;
+    width: 50%;
+}
+
+.toki {
+    float: left;
+    width: 50%;
+}
+
+#news {
+    border: 1px solid yellowgreen;
+    float: right;
+    width: 50%;
+}
+
+.da {
+    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.xiao {
+    font-size: 16px;
+}
+
+.weather-unit {
+    width: 30px;
+}
+
+.weather {
+    height: 90px;
+    float: left;
+}
+
+.weather-div {
+    margin: 1px;
+}
