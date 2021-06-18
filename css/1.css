@@ -9,8 +9,7 @@ body {
     opacity: 0.65;
 }
 
-.touming b,
-.touming a {
+.touming b, .touming a {
     color: black;
     position: relative;
 }
@@ -35,11 +34,11 @@ body {
     width: 50%;
 }
 
-#news {
+/* #news {
     border: 1px solid yellowgreen;
     float: right;
     width: 50%;
-}
+} */
 
 .da {
     font-size: 32px;
@@ -62,4 +61,8 @@ body {
 
 .weather-div {
     margin: 1px;
+}
+
+#news {
+    text-align: center;
 }

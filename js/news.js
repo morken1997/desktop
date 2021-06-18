@@ -3,15 +3,21 @@ $(document).ready(function () {
     console.log(devNews.length);
     $.ajax({
         type: "GET",
-        url: "https://dev.to/api/listings",
+        url: "https://dev.to/api/articles",
         dataType: "json",
         success: function (response) {
-            var devNews = document.getElementsByClassName("devNews");
-            console.log(devNews.length);
-
+            console.log(response);
             for (let i = 0; i <= 10; i++) {
-                devNews[i].innerHTML = JSON.stringify(response[i].title)
+                devNews[i].innerHTML = '<a href="' + response[i].url + '" target="_blank">' + JSON.stringify(response[i].title) + '</a>'
+                // JSON.stringify(response[i].title)
+
+
+                // <a href="http://www.w3school.com.cn">Visit W3School</a>
                 // console.log(JSON.stringify(response[i]));
+
+
+
+
 
             }
         }
